@@ -41,4 +41,5 @@ jobs:
           heroku_email: "11jasonlee11@gmail.com"
           healthcheck: "https://my-cicd-practice.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
 

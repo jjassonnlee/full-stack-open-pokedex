@@ -1,2 +1,2 @@
-web: npm run startissimo-prod
+web: npm run start-prod
 
