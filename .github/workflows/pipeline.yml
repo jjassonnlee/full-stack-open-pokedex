@@ -33,8 +33,6 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
 
-      - run: git add -A && git commit -m "update"
-
       - name: deploy to heroku
         uses: akhileshns/heroku-deploy@v3.11.10
         with:
