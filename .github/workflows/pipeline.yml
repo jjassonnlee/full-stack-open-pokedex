@@ -47,7 +47,9 @@ jobs:
           DEFAULT_BUMP: 'patch'
 
       - name: deploy to heroku
-        if: ${{ github.event_name == 'push' }}
+        if: |
+          github.event_name == 'push'  &&
+          (!(contains(join(toJson(github.event.commits.*.message), ' '), '#skip')))
         uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
